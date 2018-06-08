@@ -33,4 +33,10 @@ Calculator.sub = function () {
     }
 }
 
+Calculator.mul = function () {
+    this.Cal = function (a, b) {
+        return a * b
+    }
+}
+
 module.exports = Calculator
