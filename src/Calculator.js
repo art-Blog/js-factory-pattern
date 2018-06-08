@@ -27,5 +27,10 @@ Calculator.add = function () {
     }
 }
 
+Calculator.sub = function () {
+    this.Cal = function (a, b) {
+        return a - b
+    }
+}
 
 module.exports = Calculator
