@@ -8,6 +8,7 @@ describe('Calculator', () => {
     let dataSet = [
         { args: { a: 3, b: 5 }, operator: 'add', expected: 8 },
         { args: { a: 3, b: 5 }, operator: 'sub', expected: -2 },
+        { args: { a: 3, b: 5 }, operator: 'mul', expected: 15 },
     ]
     dataSet.forEach(data => {
         it(`${data.operator} ${data.args.a} and ${data.args.b} should equal ${data.expected}`, () => {
