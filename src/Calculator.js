@@ -39,4 +39,9 @@ Calculator.mul = function () {
     }
 }
 
+Calculator.div = function () {
+    this.Cal = function (a, b) {
+        return a / b
+    }
+}
 module.exports = Calculator
