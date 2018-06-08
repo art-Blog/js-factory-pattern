@@ -5,17 +5,15 @@ chai.should()
 
 
 describe('Calculator', () => {
-    it('#add()', () => {
-        let expected = 8
-        let instance = Calculator.factory('add')
-        let actual = instance.Compute(3, 5)
-        actual.should.be.equal(expected)
-    });
-
-    it('#sub()', () => {
-        let expected = -2
-        let instance = Calculator.factory('sub')
-        let actual = instance.Compute(3, 5)
-        actual.should.be.equal(expected)
+    let dataSet = [
+        { args: { a: 3, b: 5 }, operator: 'add', expected: 8 },
+        { args: { a: 3, b: 5 }, operator: 'sub', expected: -2 },
+    ]
+    dataSet.forEach(data => {
+        it(`${data.operator} ${data.args.a} and ${data.args.b} should equal ${data.expected}`, () => {
+            let instance = Calculator.factory(data.operator)
+            let actual = instance.Compute(data.args.a, data.args.b)
+            actual.should.be.equal(data.expected)
+        });
     })
 });
