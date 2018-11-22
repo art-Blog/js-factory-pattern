@@ -19,10 +19,10 @@ describe("ModuleFactory - Calculator2", () => {
       let actual = instance.Compute(data.args.a, data.args.b);
       actual.should.be.equal(data.expected);
     });
+  });
 
-    it("Any Arugment with Operator Not Exist Should Throw Error", () => {
-      let ErrFun = () => factory.GetCalculator("test");
-      assert.throw(ErrFun, Error, "test dosen't exist");
-    });
+  it("Any Arugment with Operator Not Exist Should Throw Error", () => {
+    let ErrFun = () => factory.GetCalculator("test");
+    assert.throw(ErrFun, Error, "test dosen't exist");
   });
 });
