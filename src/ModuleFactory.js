@@ -1,13 +1,10 @@
 var Calculator = require("./Calculator2.js");
-module.exports = class ModuleFactory {
+class ModuleFactory {
   static GetCalculator(type) {
     let constr = type;
 
     if (typeof Calculator[constr] !== "function") {
-      throw {
-        name: "Error",
-        message: constr + " dosen't exist"
-      };
+      throw new Error(constr + " dosen't exist");
     }
 
     if (typeof Calculator[constr].prototype.Compute !== "function") {
@@ -16,4 +13,6 @@ module.exports = class ModuleFactory {
 
     return new Calculator[constr]();
   }
-};
+}
+
+module.exports = ModuleFactory;
